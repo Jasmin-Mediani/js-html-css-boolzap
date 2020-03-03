@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container-fw {
+  height: 100vh;
+  width: 100%;
+  position: relative; /* per finestra-absolute */
+  background-color: #d9dbd4;
+}
+
+.banda-verde {
+  height: 125px;
+  width: 100%;
+  background-color: #009688;
+}
+
+.finestra-absolute {
+  width: 85%; /*forse è meglio in pixel*/
+  height: 93%;
+  border: 1px solid black;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/********************** contenitore a sx **************/
+
+.contenitore-sx {
+  height: 100%;
+  width: 35%;
+  background-color: pink;
+  float: left;
+}
+
+.blocco-alto {
+  height: 210px;
+  width: 100%;
+  background-color: green;
+}
+
+.impostazioni-utente {
+  height: 80px;
+  width: 100%;
+  background-color: #ededed;
+  min-height: 70px;
+}
+
+.box-sx,
+.box-dx {
+  height: 100%;
+  width: 50%;
+  float: left;
+  display: flex;
+}
+
+.box {
+  width: 40px;
+  height: 40px;
+}
+
+.box-dx {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.box-dx .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+}
+
+.box-dx .fas {
+  font-size: 20px;
+  color: #bababa;
+}
+
+.box-sx {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ricevi-notifiche-nuovi-messaggi {
+  height: 80px;
+  width: 100%;
+  background-color: #99dffc;
+  display: flex;
+  align-items: center;
+}
+
+.btn-notifiche {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  color: #99dffc;
+}
+
+.testo-ricevi-notifiche p {
+  text-decoration: underline;
+}
+
+.contenitore-cerca-e-icona {
+  width: 90%;
+  height: 75%;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: space-around;
+  border: 1px solid rgb(216, 215, 215);
+}
+.cerca-chat {
+  width: 100%;
+  height: 50px;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+#find-chat {
+  width: 90%;
+  height: 27px;
+  border-radius: 5px;
+  border: none;
+}
+
+.lista-contatti {
+  height: calc(100% - 210px);
+  width: 100%;
+  background-color: blueviolet;
+  overflow: auto;
+}
+
+.contatto {
+  height: 85px;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgb(206, 206, 206);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/*.foto-contatto {
+  width: 75px;
+  height: 75px;
+  border: 1px solid red;
+  border-radius: 50%;
+  margin-left: 5px;
+}*/
+
+.contatto img,
+.box-sx img,
+.btn-notifiche {
+  max-width: 60px;
+  margin-left: 25px;
+  margin-right: 15px;
+}
+
+.nome-contatto-e-anteprima-messaggio {
+  height: 100%;
+  width: 55%;
+  min-width: 100px;
+}
+
+.nome-contatto,
+.anteprima-messaggio {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  padding-left: 5px;
+}
+
+.nome-contatto {
+  align-items: flex-end;
+}
+
+.anteprima-messaggio {
+  align-items: flex-start;
+}
+
+.ora-messaggio-contatto {
+  width: 90px;
+  min-width: 75px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**************** contenitore destra ************/
+
+.contenitore-dx {
+  height: 100%;
+  width: 65%;
+  background-color: azure;
+  float: right;
+  background-image: url("https://storage.needpix.com/rsynced_images/background-4075626_1280.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contenitore-dx .impostazioni-utente {
+  height: 80px;
+  border-left: 1px solid rgb(199, 199, 199);
+}
+
+.contenitore-dx .impostazioni-utente p {
+  text-decoration: none;
+}
+
+.contenitore-messaggi {
+  height: calc(100% - 160px);
+  width: 100%;
+  overflow: auto;
+}
+
+.barra-inserimento-testo {
+  height: 80px;
+  width: 100%;
+  background-color: rgb(187, 95, 42);
+}
+
+.row {
+  height: 150px;
+  width: 100%;
+  border: 1px solid red;
+}
