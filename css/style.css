@@ -162,6 +162,14 @@
   align-items: center;
 }
 
+.contatto h3 {
+  font-size: 16px;
+}
+
+.contatto p {
+  font-size: 12px;
+}
+
 /*.foto-contatto {
   width: 75px;
   height: 75px;
@@ -230,6 +238,8 @@
 
 .contenitore-dx .impostazioni-utente p {
   text-decoration: none;
+  font-size: 12px;
+  padding-top: 5px;
 }
 
 .contenitore-messaggi {
@@ -292,6 +302,8 @@ textarea {
   padding-bottom: 10px;
 }
 
+/***messaggio inviato***/
+
 .messaggio-inviato {
   display: flex;
   flex-direction: row;
@@ -329,7 +341,7 @@ textarea {
   align-self: flex-end;
 }
 
-/******** messaggio ricevuto *********/
+/****** messaggio ricevuto *****/
 
 .messaggio-ricevuto {
   display: flex;
@@ -366,4 +378,10 @@ textarea {
 
 .messaggio-ricevuto .messaggio small {
   align-self: flex-end;
+}
+
+/*********** EFFETTI ************/
+
+.contatto:hover {
+  background-color: rgb(224, 224, 224);
 }
