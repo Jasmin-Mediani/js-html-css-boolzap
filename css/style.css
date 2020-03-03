@@ -113,6 +113,7 @@
 
 .testo-ricevi-notifiche p {
   text-decoration: underline;
+  padding-top: 5px;
 }
 
 .contenitore-cerca-e-icona {
@@ -151,7 +152,7 @@
 }
 
 .contatto {
-  height: 85px;
+  height: 70px;
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid rgb(206, 206, 206);
@@ -172,7 +173,7 @@
 .contatto img,
 .box-sx img,
 .btn-notifiche {
-  max-width: 60px;
+  max-width: 50px;
   margin-left: 25px;
   margin-right: 15px;
 }
@@ -235,16 +236,134 @@
   height: calc(100% - 160px);
   width: 100%;
   overflow: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .barra-inserimento-testo {
   height: 80px;
   width: 100%;
-  background-color: rgb(187, 95, 42);
+  background-color: #f5f0ed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  align-items: center;
 }
 
+.emoticons,
+.messaggio-vocale {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: #989d9e;
+}
+
+.chat {
+  width: calc(100% - 160px);
+}
+
+#inserimento-testo {
+  width: calc(100%);
+  height: 60px;
+}
+
+textarea {
+  resize: none !important;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+*:focus {
+  /*rimuove i bordi azzurri che escono quando clicco tex-area e input*/
+  outline: none;
+}
+
+/********** MESSAGGI DELL'UTENTE E CHATTANTE **********/
 .row {
-  height: 150px;
+  min-height: 150px;
+  max-height: 1000px;
   width: 100%;
-  border: 1px solid red;
+  border: 1px solid transparent;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.messaggio-inviato {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.messaggio-inviato .messaggio {
+  min-height: 80px;
+  width: 300px;
+  background-color: #dafac2;
+  margin-right: 30px;
+  align-self: center;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.div-paragrafo {
+  height: 90%;
+  width: 100%;
+}
+
+.messaggio-inviato .messaggio p {
+  padding: 12px;
+}
+
+.div-small {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.messaggio-inviato .messaggio small {
+  align-self: flex-end;
+}
+
+/******** messaggio ricevuto *********/
+
+.messaggio-ricevuto {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.messaggio-ricevuto .messaggio {
+  min-height: 80px;
+  width: 300px;
+  background-color: #ffffff;
+  margin-left: 30px;
+  align-self: center;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.div-paragrafo {
+  height: 90%;
+  width: 100%;
+}
+
+.messaggio-ricevuto .messaggio p {
+  padding: 12px;
+}
+
+.div-small {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.messaggio-ricevuto .messaggio small {
+  align-self: flex-end;
 }
