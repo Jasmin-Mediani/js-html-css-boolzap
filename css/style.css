@@ -27,7 +27,6 @@
 .finestra-absolute {
   width: 85%; /*forse è meglio in pixel*/
   height: 93%;
-  border: 1px solid black;
   position: absolute;
   top: 30px;
   left: 50%;
@@ -39,7 +38,6 @@
 .contenitore-sx {
   height: 100%;
   width: 35%;
-  background-color: pink;
   float: left;
 }
 
@@ -147,7 +145,6 @@
 .lista-contatti {
   height: calc(100% - 210px);
   width: 100%;
-  background-color: blueviolet;
   overflow: auto;
 }
 
