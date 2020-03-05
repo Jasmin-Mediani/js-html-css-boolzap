@@ -29,7 +29,8 @@ $(document).ready(function () {
             rowClonata.find('p').text(msg); //nel testo del P metto quanto scritto (msg) nella text-area
             rowClonata.find('small').text(data()); //aggiungo l'ora
             //$(rowClonata).insertBefore(".ultima-riga");
-            $( ".contenitore-messaggi" ).append( $( rowClonata ) );
+            $(".contenitore-messaggi").append($(rowClonata));
+            //append inserisce l'elemento all'interno di un altro come figlio, mentre insertBefore inserisce un elemento sopra un altro, sullo stesso livello (come fratelli). Con append, rowClonata è diventata figlia di contenitore-messaggi. Con insert-before era sorella di ultima-riga. Cambiando chat si cancellava anche "ultima-riga" perché cancello tutto l'html del contenitore, lo rigenero vuoto. Non potevo più inserire i messaggi. Mettendo i template fuori dal contenitore-messaggi - tanto sono invisibili - non si cancellano e posso ripescarli per generarli nelle chat dei contatti. ((Ora "ultima-riga" non mi servirebbe neanche più ma la lascio per questa spiegazione))
 
             $("textarea").val("");
 
@@ -56,7 +57,7 @@ $(document).ready(function () {
     });
 
 
-    
+
     $('#find-chat').keyup(function (event) {
         var carattereFiltro = $(this).val().toLowerCase();
         $('.contatto').each(function () {
@@ -135,5 +136,5 @@ function generaMessaggioRicevuto() {
     rowClonata2.find('p').html("ok");
     rowClonata2.find('small').text(data());
     //$(rowClonata2).insertBefore(".ultima-riga");
-    $( ".contenitore-messaggi" ).append( $( rowClonata2 ) );
+    $(".contenitore-messaggi").append($(rowClonata2)); ///append inserisce l'elemento all'interno di un altro come figlio, mentre insertBefore inserisce un elemento sopra un altro, sullo stesso livello (come fratelli). Con append, rowClonata è diventata figlia di contenitore-messaggi. Con insert-before era sorella di ultima-riga. Cambiando chat si cancellava anche "ultima-riga" perché cancello tutto l'html del contenitore, lo rigenero vuoto. Non potevo più inserire i messaggi. Mettendo i template fuori dal contenitore-messaggi - tanto sono invisibili - non si cancellano e posso ripescarli per generarli nelle chat dei contatti. ((Ora "ultima-riga" non mi servirebbe neanche più ma la lascio per questa spiegazione))
 }
