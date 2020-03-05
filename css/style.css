@@ -146,6 +146,7 @@
   height: calc(100% - 210px);
   width: 100%;
   overflow: auto;
+  background-color: white;
 }
 
 .contatto {
@@ -379,7 +380,8 @@ textarea {
 
 /************ TEMPLATE VUOTO ***********/
 
-.template1, .template2 {
+.template1,
+.template2 {
   display: none;
 }
 

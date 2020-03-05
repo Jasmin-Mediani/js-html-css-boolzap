@@ -17,7 +17,6 @@ $(document).ready(function () {
     $("textarea").keypress(function () {
         if (event.which == 13) {
             var msg = $(this).val();
-            //$(this).val("");
             console.log(msg);
 
 
@@ -34,14 +33,15 @@ $(document).ready(function () {
             $("textarea").val("");
 
 
-            /******** messaggio ricevuto*********  */
+            /******** messaggio ricevuto*********
 
             //LO DEVO OSCURARE PERCHE' HO GIA' INSERITO QUESTO ALL'INTERNO DI UNA FUNZIONE CHE SI CHIAMA generaMessaggioRicevuto. SE LO LASCIO VISIBILE HO UN DOPPIO MESSAGGIO RICEVUTO. 
 
-            /*  var rowClonata2 = $('.template2 .messaggio-ricevuto').clone();
-              rowClonata2.find('p').html("ok");
-              rowClonata2.find('small').text(data());
-              $(rowClonata2).insertBefore(".ultima-riga"); */
+            //  var rowClonata2 = $('.template2 .messaggio-ricevuto')//.clone(); 
+            //  rowClonata2.find('p').html("ok");
+            //  rowClonata2.find('small').text(data());
+            //  $(rowClonata2).insertBefore(".ultima-riga");
+            //   */
 
 
             setTimeout(function () {
@@ -50,9 +50,23 @@ $(document).ready(function () {
 
             }, 3000);
 
-
-
         }
+
+    });
+
+
+    console.log($('#find-chat'));
+    $('#find-chat').keyup(function (event) {
+        var carattereFiltro = $(this).val().toLowerCase();
+        $('.contatto').each(function () {
+            var nome = $(this).find('.nome-contatto h3').text().toLowerCase();
+            console.log(nome);
+            if (nome.includes(carattereFiltro)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
     });
 
 
@@ -68,14 +82,6 @@ $(document).ready(function () {
 
 
     // trovare un modo per mettere la visuale sull'ultimo messaggio inviato per non dover scrollare (scrolled)
-
-
-
-
-
-
-
-
 
 
 
