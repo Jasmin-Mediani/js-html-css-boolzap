@@ -311,7 +311,7 @@ textarea {
   min-height: 80px;
   width: 300px;
   background-color: #dafac2;
-  margin-right: 30px;
+  margin-right: 30px !important;
   align-self: center;
   border-radius: 15px;
   display: flex;
@@ -375,6 +375,16 @@ textarea {
 
 .messaggio-ricevuto .messaggio small {
   align-self: flex-end;
+}
+
+/************ TEMPLATE VUOTO ***********/
+
+.template1, .template2 {
+  display: none;
+}
+
+.prima-riga {
+  display: none;
 }
 
 /*********** EFFETTI ************/

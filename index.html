@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/e6ac989c9a.js"
       crossorigin="anonymous"
     ></script>
+    
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -193,8 +194,9 @@
               </div>
             </div>
           </div>
-          <div class="contenitore-messaggi"> 
+          <div class="contenitore-messaggi" id="id-contenitore"> 
               <!-- row, ognuna contiene il messaggio di un utente-->
+              <div class="prima-riga"></div>
               <div class="row messaggio-inviato">
                 <div class="messaggio">
                   <div class="div-paragrafo"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum itaque delectus, dolore culpa quo magni ea sit expedita, omnis placeat repudiandae nobis nam at voluptate, explicabo officiis impedit ab.</p></div>
@@ -237,7 +239,27 @@
                   <div class="div-small"> <small>14:57</small></div>
                 </div>
               </div>
-          </div>
+
+              <!-- template, messaggio inviato vuoto invisibile -->
+              <div class="template1">
+                <div class="row messaggio-inviato">
+                  <div class="messaggio">
+                    <div class="div-paragrafo"><p> Questo è un template vuoto!</p></div>
+                    <div class="div-small"> <small>14:57</small></div>
+                  </div>
+                </div>
+               </div>
+               <!--template, messaggio ricevuto vuoto invisibile -->
+               <div class="template2">
+                <div class="row messaggio-ricevuto">
+                  <div class="messaggio">
+                    <div class="div-paragrafo"><p> Questo è un template vuoto!</p></div>
+                    <div class="div-small"> <small>14:57</small></div>
+                  </div>
+                </div>
+               </div>
+               <div class="ultima-riga"></div>
+              </div>
           <div class="barra-inserimento-testo">
             <div class="emoticons"><i class="far fa-smile-beam"></i></div>
 
@@ -250,5 +272,8 @@
         </div>
       </div>
     </div>
+    <!--<script src="http://code.jquery.com/jquery-2.1.0-rc1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
