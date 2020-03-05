@@ -28,7 +28,8 @@ $(document).ready(function () {
             var rowClonata = $('.template1 .messaggio-inviato').clone(); // ha"display: none" nel CSS
             rowClonata.find('p').text(msg); //nel testo del P metto quanto scritto (msg) nella text-area
             rowClonata.find('small').text(data()); //aggiungo l'ora
-            $(rowClonata).insertBefore(".ultima-riga");
+            //$(rowClonata).insertBefore(".ultima-riga");
+            $( ".contenitore-messaggi" ).append( $( rowClonata ) );
 
             $("textarea").val("");
 
@@ -55,7 +56,7 @@ $(document).ready(function () {
     });
 
 
-    console.log($('#find-chat'));
+    
     $('#find-chat').keyup(function (event) {
         var carattereFiltro = $(this).val().toLowerCase();
         $('.contatto').each(function () {
@@ -79,6 +80,9 @@ $(document).ready(function () {
     $(".contatto").click(function () {
         document.getElementById("id-contenitore").innerHTML = ""
     });
+
+
+
 
 
     // trovare un modo per mettere la visuale sull'ultimo messaggio inviato per non dover scrollare (scrolled)
@@ -130,5 +134,6 @@ function generaMessaggioRicevuto() {
     var rowClonata2 = $('.template2 .messaggio-ricevuto').clone();
     rowClonata2.find('p').html("ok");
     rowClonata2.find('small').text(data());
-    $(rowClonata2).insertBefore(".ultima-riga");
+    //$(rowClonata2).insertBefore(".ultima-riga");
+    $( ".contenitore-messaggi" ).append( $( rowClonata2 ) );
 }
