@@ -14,7 +14,8 @@
 .container-fw {
   height: 100vh;
   width: 100%;
-  position: relative; /* per finestra-absolute */
+  position: relative;
+  /* per finestra-absolute */
   background-color: #d9dbd4;
 }
 
@@ -25,7 +26,8 @@
 }
 
 .finestra-absolute {
-  width: 85%; /*forse è meglio in pixel*/
+  width: 85%;
+  /*forse è meglio in pixel*/
   height: 93%;
   position: absolute;
   top: 30px;
@@ -34,7 +36,6 @@
 }
 
 /********************** contenitore a sx **************/
-
 .contenitore-sx {
   height: 100%;
   width: 35%;
@@ -125,6 +126,7 @@
   justify-content: space-around;
   border: 1px solid rgb(216, 215, 215);
 }
+
 .cerca-chat {
   width: 100%;
   height: 50px;
@@ -175,7 +177,6 @@
   border-radius: 50%;
   margin-left: 5px;
 }*/
-
 .contatto img,
 .box-sx img,
 .btn-notifiche {
@@ -217,7 +218,6 @@
 }
 
 /**************** contenitore destra ************/
-
 .contenitore-dx {
   height: 100%;
   width: 65%;
@@ -234,6 +234,11 @@
   border-left: 1px solid rgb(199, 199, 199);
 }
 
+.contenitore-dx .impostazioni-utente .box-sx img {
+  width: 100%;
+  margin-left: 0;
+}
+
 .contenitore-dx .impostazioni-utente p {
   text-decoration: none;
   font-size: 12px;
@@ -241,6 +246,16 @@
 }
 
 .contenitore-messaggi {
+  height: calc(100% - 160px);
+  width: 100%;
+  overflow: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: none;
+}
+
+/*********************************************/
+.contenitore-msg-attivo {
   height: calc(100% - 160px);
   width: 100%;
   overflow: auto;
@@ -290,6 +305,14 @@ textarea {
   outline: none;
 }
 
+.box-img {
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
+  margin-left: 25px;
+  margin-right: 15px;
+}
+
 /********** MESSAGGI DELL'UTENTE E CHATTANTE **********/
 .row {
   min-height: 150px;
@@ -301,7 +324,6 @@ textarea {
 }
 
 /***messaggio inviato***/
-
 .messaggio-inviato {
   display: flex;
   flex-direction: row;
@@ -318,6 +340,32 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  /* per "elimina-mex in absolute*/
+}
+
+.fa-chevron-down {
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  width: 20px;
+  align-self: flex-end;
+}
+
+.elimina-mex {
+  height: 60px;
+  background-color: rgb(216, 213, 213);
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 2px 5px 5px grey;
+  /*padding: 20px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
 .div-paragrafo {
@@ -340,7 +388,6 @@ textarea {
 }
 
 /****** messaggio ricevuto *****/
-
 .messaggio-ricevuto {
   display: flex;
   flex-direction: row;
@@ -357,6 +404,8 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  /* per "elimina-mex in absolute*/
 }
 
 .div-paragrafo {
@@ -379,7 +428,6 @@ textarea {
 }
 
 /************ TEMPLATE VUOTO ***********/
-
 .template1,
 .template2 {
   display: none;
@@ -390,7 +438,6 @@ textarea {
 }
 
 /*********** EFFETTI ************/
-
 .contatto:hover {
   background-color: rgb(224, 224, 224);
 }
