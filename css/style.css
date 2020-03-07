@@ -232,6 +232,7 @@
 .contenitore-dx .impostazioni-utente {
   height: 80px;
   border-left: 1px solid rgb(199, 199, 199);
+  display: none;
 }
 
 .contenitore-dx .impostazioni-utente .box-sx img {
@@ -252,6 +253,48 @@
   padding-top: 30px;
   padding-bottom: 30px;
   display: none;
+}
+
+#nessun-utente {
+  display: block;
+  background-color: #f7f7f7;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenitore-interno {
+  height: 100%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contenitore-interno img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.contenitore-interno h2 {
+  padding-bottom: 20px;
+  font-size: 21px;
+}
+
+.contenitore-interno h6 {
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid gray;
+}
+
+.fa-laptop {
+  margin-right: 5px;
 }
 
 /*********************************************/
@@ -353,12 +396,12 @@ textarea {
 }
 
 .elimina-mex {
-  height: 60px;
+  height: 50px;
   background-color: rgb(216, 213, 213);
   position: absolute;
   right: 0;
   top: 30px;
-  width: 100%;
+  width: 80%;
   text-align: center;
   box-shadow: 2px 5px 5px grey;
   /*padding: 20px;*/
@@ -366,6 +409,8 @@ textarea {
   justify-content: center;
   align-items: center;
   display: none;
+  padding-top: 15px;
+  border-radius: 3px;
 }
 
 .div-paragrafo {

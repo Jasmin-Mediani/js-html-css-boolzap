@@ -1,6 +1,9 @@
 $(document).ready(function () {
 
-    attivaChat("#primo-utente"); //così si vede qualcosa ricaricando la pagina, non rimane uno sfondo vuoto. 
+    $(".contenitore-dx .impostazioni-utente").hide();
+
+
+    //attivaChat("#primo-utente"); //così si vede qualcosa ricaricando la pagina, non rimane uno sfondo vuoto. 
 
     //per eliminare i messaggi
     $(".fa-chevron-down").click(function () {
@@ -26,42 +29,62 @@ $(document).ready(function () {
 
     $(".contatto1").click(function () {
         attivaChat("#primo-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto2").click(function () {
         attivaChat("#secondo-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto3").click(function () {
         attivaChat("#terzo-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto4").click(function () {
         attivaChat("#quarto-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto5").click(function () {
         attivaChat("#quinto-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto6").click(function () {
         attivaChat("#sesto-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto7").click(function () {
         attivaChat("#settimo-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto8").click(function () {
         attivaChat("#ottavo-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto9").click(function () {
         attivaChat("#nono-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
     $(".contatto10").click(function () {
         attivaChat("#decimo-utente");
+        $(".contenitore-dx .impostazioni-utente").show();
+
     });
 
 
