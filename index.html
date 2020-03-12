@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whatsapp web</title>
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e6ac989c9a.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -220,6 +221,7 @@
                     <h5>Boolzapp si collega al tuo telefono per sincronizzare i messaggi. Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.</h5>
                     <h6><i class="fas fa-laptop"></i> Boolzapp è disponibile per Windows. <a href="">Scaricala qui.</a></h6>
                     </div>
+
                 </div>
                 <div class="contenitore-messaggi" id="primo-utente"></div>
                 <div class="contenitore-messaggi" id="secondo-utente"></div>
@@ -230,7 +232,7 @@
                 <div class="contenitore-messaggi" id="settimo-utente"></div>
                 <div class="contenitore-messaggi" id="ottavo-utente"></div>
                 <div class="contenitore-messaggi" id="nono-utente"></div>
-                <div class="contenitore-messaggi" id="decimo-utente"></div>
+                <div class="contenitore-messaggi" id="decimo-utente"></div> 
                 <div class="barra-inserimento-testo">
                     <div class="emoticons"><i class="far fa-smile-beam"></i></div>
 
@@ -243,40 +245,45 @@
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    
+    
 
-    <!-- template, messaggio inviato vuoto invisibile, messo fuori ma sempre in body -->
-    <div class="template1">
-        <div class="row messaggio-inviato">
-            <div class="messaggio">
-                <i class="fas fa-chevron-down"></i>
-                <div class="elimina-mex">
-                    elimina questo messaggio
+<!-- templates di handelbars... per inviato e ricevuto -->
+
+    <script id="template-hdb-inviato" type="text/x-handlebars-template">
+        <div>
+            <div class="row messaggio-inviato">
+                <div class="messaggio">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="elimina-mex">
+                        elimina questo messaggio
+                    </div>
+                    <div class="div-paragrafo">
+                        <p> {{ mexinviato }} </p>
+                    </div>
+                    <div class="div-small"> <small>{{ orario }}</small></div>
                 </div>
-                <div class="div-paragrafo">
-                    <p> Questo è un template vuoto!</p>
-                </div>
-                <div class="div-small"> <small>14:57</small></div>
             </div>
         </div>
-    </div>
-    <!--template, messaggio ricevuto vuoto invisibile, messo fuori ma sempre in body -->
-    <div class="template2">
-        <div class="row messaggio-ricevuto">
-            <div class="messaggio">
-                <i class="fas fa-chevron-down"></i>
-                <div class="elimina-mex">
-                    elimina questo messaggio
-                </div>
-                <div class="div-paragrafo">
-                    <p> Questo è un template vuoto!</p>
-                </div>
-                <div class="div-small"> <small>14:57</small></div>
-            </div>
-        </div>
-    </div>
+    </script>
 
+    <script id="template-hdb-ricevuto" type="text/x-handlebars-template">
+            <div class="row messaggio-ricevuto">
+                <div class="messaggio">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="elimina-mex">
+                        elimina questo messaggio
+                    </div>
+                    <div class="div-paragrafo">
+                        <p> {{ mexricevuto }} </p>
+                    </div>
+                    <div class="div-small"> <small>{{orario}}</small></div>
+                </div>
+            </div>
+    </script>
+
+
+<script src="js/main.js"></script>
 </body>
 
 </html>

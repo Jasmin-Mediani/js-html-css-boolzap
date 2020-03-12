@@ -3,8 +3,6 @@ $(document).ready(function () {
     $(".contenitore-dx .impostazioni-utente").hide();
 
 
-    //attivaChat("#primo-utente"); //così si vede qualcosa ricaricando la pagina, non rimane uno sfondo vuoto. 
-
     //per eliminare i messaggi
     $(".fa-chevron-down").click(function () {
         $(".elimina-mex").slideUp(); //li tiro su tutti;
@@ -25,7 +23,7 @@ $(document).ready(function () {
         $(".box-img").html(immagineUtente);
     });
 
-    // carrellata di attivazioni chat in base al numeo di utenti.
+    ////////////  carrellata di attivazioni chat in base al numeo di utenti. //////////////
 
     $(".contatto1").click(function () {
         attivaChat("#primo-utente");
@@ -87,62 +85,45 @@ $(document).ready(function () {
 
     });
 
-
+    ///// quando del testo viene inviato con INVIO /////////
 
     $("textarea").keypress(function () {
         if (event.which == 13) {
             var msg = $(this).val();
 
-            if (msg.trim().length < 1) {  //trim toglie dal testo gli spazi vuoti all'inizio e alla fine del testo. In questo modo non posso inviare messaggi vuoti (visto che iniziano con uno spazio vuoto).  
+            if (msg.trim().length < 1) {
                 return
             }
 
-            var rowClonata = $('.template1 .messaggio-inviato').clone(); // ha"display: none" nel CSS
-            rowClonata.find('p').text(msg); //nel testo del P metto quanto scritto (msg) nella text-area
-            rowClonata.find('small').text(data()); //aggiungo l'ora
-            $(".active").append($(rowClonata));
+            ////////////////      HANDLEBARS     ////////////////
+
+            var source = $('#template-hdb-inviato').html();
+            var templateClonatoInviato = Handlebars.compile(source);
+            var rowClonata = templateClonatoInviato({
+                mexinviato: msg,
+                orario: data()
+            });
+            $(".active").append(rowClonata);
+
 
             $("textarea").val("");
 
             setTimeout(function () {
-                generaMessaggioRicevuto(msg);
+                var source = $('#template-hdb-ricevuto').html();
+                var templateClonatoRicevuto = Handlebars.compile(source);
+                var rowClonataR = templateClonatoRicevuto({
+                    mexricevuto: "ok!",
+                    orario: data()
+                });
+                $(".active").append(rowClonataR);
             }, 3000);
-            $(".active").scrollTop(100000); //visto che "pixelScroll();" non funziona, l'ho tolta... così è meglio di niente :(
 
-
-            // collego il click all'oggetto clonato (altrimenti non funziona)
-            rowClonata.find(".fa-chevron-down").click(function () {
-                $(".elimina-mex").slideUp(); //li tiro su tutti;
-                $(this).next(".elimina-mex").toggle(); // "del fa-chevron-down prendi il prossimo fratello  ".elimina-mex" e mostralo/nascondilo al click dello chevron con cui sto interagendo);
-            });
-
-            rowClonata.find(".elimina-mex").click(function () {
-                (rowClonata).remove();
-
-
-            });
-
-
-            /* se voglio eliminare anche un messaggio ricevuto, incollo questo nella funzione generaMessaggioRicevuto
-
-        rowClonata2.find(".fa-chevron-down").click(function () {
-            $(".elimina-mex").slideUp(); //li tiro su tutti;
-            $(this).next(".elimina-mex").toggle(); //mostro e nascondo al click solo quello con cui sto interagendo.
-        });
-
-        rowClonata2.find(".elimina-mex").click(function () {
-            rowClonata2.remove();
-
-
-        }); */
-
+            $(".active").scrollTop(100000);
         }
-
-
-
 
     });
 
+    /////////// ricerca conttati (filtro) //////////
 
     $('#find-chat').keyup(function (event) {
         var carattereFiltro = $(this).val().toLowerCase();
@@ -157,13 +138,24 @@ $(document).ready(function () {
         });
     });
 
+    //// possibilità di eliminare i messaggi inviati: (document).on permette azioni sugli elementi aggiunti successivamente nella pagina. 
+
+    $(document).on("click", ".fa-chevron-down", function () {
+        $(".elimina-mex").slideUp(); //li tiro su tutti;
+        $(this).next(".elimina-mex").toggle();
+
+        $(".elimina-mex").click(function () {
+
+            $(this).parents(".messaggio-inviato").remove();
+        });
+    });
 
 
 });
 
 
 
-/************************************************************ FUNZIONI ************************************************************/
+/******************************************************* FUNZIONI ************************************************************/
 
 
 /********** funzione orario: la richiamo con data() dove mi serve *********/
@@ -180,16 +172,6 @@ function data() {
     var h = addZero(d.getHours());
     var m = addZero(d.getMinutes());
     return h + ":" + m;
-}
-
-
-function generaMessaggioRicevuto(msg) {
-    var rowClonata2 = $('.template2 .messaggio-ricevuto').clone();
-    rowClonata2.find('p').html("'" + msg + "' a te!");
-    rowClonata2.find('small').text(data());
-    //$(rowClonata2).insertBefore(".ultima-riga");
-    $(".active").append($(rowClonata2)); ///append inserisce l'elemento all'interno di un altro come figlio, mentre insertBefore inserisce un elemento sopra un altro, sullo stesso livello (come fratelli). Con append, rowClonata è diventata figlia di contenitore-messaggi. Con insert-before era sorella di ultima-riga. Cambiando chat si cancellava anche "ultima-riga" perché cancello tutto l'html del contenitore, lo rigenero vuoto. Non potevo più inserire i messaggi. Mettendo i template fuori dal contenitore-messaggi - tanto sono invisibili - non si cancellano e posso ripescarli per generarli nelle chat dei contatti. ((Ora "ultima-riga" non mi servirebbe neanche più ma la lascio per questa spiegazione))
-
 }
 
 
