@@ -17,13 +17,15 @@ $(document).ready(function () {
 
     //in base a quale contatto clicco per chattarci, il suo avatar e il suo nome devono apparire nella barra in alto:
 
-    $(".contatto").click(function () {
+
+    $(document).on("click", ".contatto", function () {
         var nomeContatto = $(this).find("h3").text();
         $(".nome-contatto-chattante").children("h4").text(nomeContatto);
 
         var immagineUtente = $(this).children("img").clone();
         $(".box-img").html(immagineUtente);
-    });
+
+    })
 
     ////////////  carrellata di attivazioni chat in base al numeo di utenti. //////////////
 
