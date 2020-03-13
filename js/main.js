@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
     $(".contenitore-dx .impostazioni-utente").hide();
 
 
@@ -25,64 +27,68 @@ $(document).ready(function () {
 
     ////////////  carrellata di attivazioni chat in base al numeo di utenti. //////////////
 
-    $(".contatto1").click(function () {
+    $(document).on("click", ".contatto1", function () {
         attivaChat("#primo-utente");
         $(".contenitore-dx .impostazioni-utente").show();
+    })
 
-    });
 
-    $(".contatto2").click(function () {
+    $(document).on("click", ".contatto2", function () {
+        console.log("ciao");
         attivaChat("#secondo-utente");
         $(".contenitore-dx .impostazioni-utente").show();
+    })
 
-    });
 
-    $(".contatto3").click(function () {
+    $(document).on("click", ".contatto3", function () {
         attivaChat("#terzo-utente");
         $(".contenitore-dx .impostazioni-utente").show();
+    })
 
-    });
 
-    $(".contatto4").click(function () {
+
+    $(document).on("click", ".contatto4", function () {
+
         attivaChat("#quarto-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
-    $(".contatto5").click(function () {
+
+    $(document).on("click", ".contatto5", function () {
+
         attivaChat("#quinto-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
-    $(".contatto6").click(function () {
+    $(document).on("click", ".contatto6", function () {
+
         attivaChat("#sesto-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
-    $(".contatto7").click(function () {
+    $(document).on("click", ".contatto7", function () {
+
         attivaChat("#settimo-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
-    $(".contatto8").click(function () {
+
+    $(document).on("click", ".contatto8", function () {
+
         attivaChat("#ottavo-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
-    $(".contatto9").click(function () {
+    $(document).on("click", ".contatto9", function () {
+
         attivaChat("#nono-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
-    $(".contatto10").click(function () {
+    $(document).on("click", ".contatto10", function () {
+
         attivaChat("#decimo-utente");
         $(".contenitore-dx .impostazioni-utente").show();
-
     });
 
     ///// quando del testo viene inviato con INVIO /////////
@@ -119,6 +125,7 @@ $(document).ready(function () {
             }, 3000);
 
             $(".active").scrollTop(100000);
+
         }
 
     });
@@ -149,6 +156,129 @@ $(document).ready(function () {
             $(this).parents(".messaggio-inviato").remove();
         });
     });
+
+
+
+
+    ////////// HANDLEBARS CONTATTI A SINISTRA //////////
+
+    var source = $("#template-contatto").html();
+    var templateContatto = Handlebars.compile(source);
+
+
+    var contatto1 = {
+        classe: "contatto1",
+        nome: "Chiara",
+        immagine: 'https://image.flaticon.com/icons/svg/219/219990.svg',
+        orario: data()
+    };
+
+    var contattoPopolato = templateContatto(contatto1)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+    var contatto2 = {
+        classe: "contatto2",
+        nome: "Marco",
+        immagine: "https://image.flaticon.com/icons/svg/219/219986.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto2)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+
+    var contatto3 = {
+        classe: "contatto3",
+        nome: "Sabrina",
+        immagine: "https://image.flaticon.com/icons/svg/219/219987.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto3)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+
+    var contatto4 = {
+        classe: "contatto4",
+        nome: "Marcella",
+        immagine: "https://image.flaticon.com/icons/svg/219/219984.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto4)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+    var contatto5 = {
+        classe: "contatto5",
+        nome: "Giuseppe",
+        immagine: "https://image.flaticon.com/icons/svg/219/219988.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto5)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+    var contatto6 = {
+        classe: "contatto6",
+        nome: "Giuseppina",
+        immagine: "https://image.flaticon.com/icons/svg/219/219982.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto6)
+    $(".lista-contatti").append(contattoPopolato);
+
+    var contatto7 = {
+        classe: "contatto7",
+        nome: "Marcello",
+        immagine: "https://image.flaticon.com/icons/svg/219/219981.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto7)
+    $(".lista-contatti").append(contattoPopolato);
+
+    var contatto8 = {
+        classe: "contatto8",
+        nome: "Edna",
+        immagine: "https://image.flaticon.com/icons/svg/219/219989.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto8)
+    $(".lista-contatti").append(contattoPopolato);
+
+    var contatto9 = {
+        classe: "contatto9",
+        nome: "Edmund",
+        immagine: "https://image.flaticon.com/icons/svg/219/219985.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto9)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+    var contatto10 = {
+        classe: "contatto10",
+        nome: "Claudia",
+        immagine: "https://image.flaticon.com/icons/svg/219/219980.svg",
+        orario: data()
+    };
+    var contattoPopolato = templateContatto(contatto10)
+    $(".lista-contatti").append(contattoPopolato);
+
+
+
+
+
+
+    $(document).on("click", ".contatto", function () {
+        $("#nessun-utente").hide();
+        $(".contenitore-dx .impostazioni-utente").show();
+
+    });
+
+
+
+
 
 
 });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whatsapp web</title>
+    <title>Boolzapp web</title>
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="lista-contatti">
                     <!---------------- contatti --------------- -->
-                    <div class="contatto contatto1">
+                    <!-- <div class="contatto contatto1">
                         <img src="https://image.flaticon.com/icons/svg/219/219990.svg" alt="" />
                         <div class="nome-contatto-e-anteprima-messaggio">
                             <div class="nome-contatto">
@@ -189,7 +189,7 @@
                         <div class="ora-messaggio-contatto">
                             <p>10:00</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-------------------- fine contatti ------------------------->
                 </div>
@@ -223,16 +223,16 @@
                     </div>
 
                 </div>
-                <div class="contenitore-messaggi" id="primo-utente"></div>
-                <div class="contenitore-messaggi" id="secondo-utente"></div>
-                <div class="contenitore-messaggi" id="terzo-utente"></div>
-                <div class="contenitore-messaggi" id="quarto-utente"></div>
-                <div class="contenitore-messaggi" id="quinto-utente"></div>
-                <div class="contenitore-messaggi" id="sesto-utente"></div>
-                <div class="contenitore-messaggi" id="settimo-utente"></div>
-                <div class="contenitore-messaggi" id="ottavo-utente"></div>
-                <div class="contenitore-messaggi" id="nono-utente"></div>
-                <div class="contenitore-messaggi" id="decimo-utente"></div> 
+                <div class="contenitore-messaggi" id="primo-utente">1</div>
+                <div class="contenitore-messaggi" id="secondo-utente">2</div>
+                <div class="contenitore-messaggi" id="terzo-utente">3</div>
+                <div class="contenitore-messaggi" id="quarto-utente">4</div>
+                <div class="contenitore-messaggi" id="quinto-utente">5</div>
+                <div class="contenitore-messaggi" id="sesto-utente">6</div>
+                <div class="contenitore-messaggi" id="settimo-utente">7</div>
+                <div class="contenitore-messaggi" id="ottavo-utente">8</div>
+                <div class="contenitore-messaggi" id="nono-utente">9</div>
+                <div class="contenitore-messaggi" id="decimo-utente">10</div> 
                 <div class="barra-inserimento-testo">
                     <div class="emoticons"><i class="far fa-smile-beam"></i></div>
 
@@ -280,6 +280,25 @@
                     <div class="div-small"> <small>{{orario}}</small></div>
                 </div>
             </div>
+    </script>
+
+    <!--templates handlebars per lista contatti a sinistra-->
+
+    <script id="template-contatto" type="text/x-handlebars-template">
+        <div class="contatto {{classe}}">
+            <img src={{immagine}} alt="">
+            <div class="nome-contatto-e-anteprima-messaggio">
+                <div class="nome-contatto">
+                    <h3>{{nome}}</h3>
+                </div>
+                <div class="anteprima-messaggio">
+                    <h4>....</h4>
+                </div>
+            </div>
+            <div class="ora-messaggio-contatto">
+                <p>{{orario}}</p>
+            </div>
+        </div>   
     </script>
 
 
