@@ -278,7 +278,7 @@ $(document).ready(function () {
         {
             classe: "contatto1",
             nome: "Chiara",
-            immagine: 'https://image.flaticon.com/icons/svg/219/219990.svg',
+            immagine: 'immagini/chiara.svg',
             orario: data()
         },
 
@@ -286,7 +286,7 @@ $(document).ready(function () {
         {
             classe: "contatto2",
             nome: "Marco",
-            immagine: "https://image.flaticon.com/icons/svg/219/219986.svg",
+            immagine: "immagini/marco.svg",
             orario: data()
         },
 
@@ -295,7 +295,7 @@ $(document).ready(function () {
         {
             classe: "contatto3",
             nome: "Sabrina",
-            immagine: "https://image.flaticon.com/icons/svg/219/219987.svg",
+            immagine: "immagini/sabrina.svg",
             orario: data()
         },
 
@@ -304,7 +304,7 @@ $(document).ready(function () {
         {
             classe: "contatto4",
             nome: "Marcella",
-            immagine: "https://image.flaticon.com/icons/svg/219/219984.svg",
+            immagine: "immagini/marcella.svg",
             orario: data()
         },
 
@@ -312,7 +312,7 @@ $(document).ready(function () {
         {
             classe: "contatto5",
             nome: "Giuseppe",
-            immagine: "https://image.flaticon.com/icons/svg/219/219988.svg",
+            immagine: "immagini/giuseppe.svg",
             orario: data()
         },
 
@@ -320,28 +320,28 @@ $(document).ready(function () {
         {
             classe: "contatto6",
             nome: "Giuseppina",
-            immagine: "https://image.flaticon.com/icons/svg/219/219982.svg",
+            immagine: "immagini/giuseppina.svg",
             orario: data()
         },
 
         {
             classe: "contatto7",
             nome: "Marcello",
-            immagine: "https://image.flaticon.com/icons/svg/219/219981.svg",
+            immagine: "immagini/marcello.svg",
             orario: data()
         },
 
         {
             classe: "contatto8",
             nome: "Edna",
-            immagine: "https://image.flaticon.com/icons/svg/219/219989.svg",
+            immagine: "immagini/edna.svg",
             orario: data()
         },
 
         {
             classe: "contatto9",
             nome: "Edmund",
-            immagine: "https://image.flaticon.com/icons/svg/219/219985.svg",
+            immagine: "immagini/edmund.svg",
             orario: data()
         },
 
@@ -349,7 +349,7 @@ $(document).ready(function () {
         {
             classe: "contatto10",
             nome: "Claudia",
-            immagine: "https://image.flaticon.com/icons/svg/219/219980.svg",
+            immagine: "immagini/claudia.svg",
             orario: data()
         },
 

@@ -223,10 +223,12 @@
   width: 65%;
   background-color: azure;
   float: right;
-  background-image: url("https://storage.needpix.com/rsynced_images/background-4075626_1280.jpg");
+  /*background-image: url("https://storage.needpix.com/rsynced_images/background-4075626_1280.jpg");*/
+  background-image: url("../immagini/sfondo.jpg");
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  object-fit: cover;
 }
 
 .contenitore-dx .impostazioni-utente {
